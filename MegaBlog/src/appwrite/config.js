@@ -1,4 +1,4 @@
-import conf from "../conf/conf";
+import conf from "../conf/conf.js";
 import { Client, ID ,Databases, Storage, Query  } from "appwrite";
 
 export class Service{
@@ -38,6 +38,7 @@ export class Service{
                         content,
                         featuredimage,
                         status,
+                        userid,
                     }
                 )
         } catch (error) {
@@ -65,7 +66,7 @@ export class Service{
 
     async getPosts(queries=[Query.equal("status","active")]){
         try {
-            return await this.databases.listDocuments(conf.appWriteDatabaseId,conf.appWriteCollectionId,queries);
+            return await this.databases.listDocuments(conf.appWriteDatabaseId,conf.appWriteCollectionId,queries,);
         } catch (error) {
             console.log("Appwrite service :: getposts :: error",error);
             return false;
