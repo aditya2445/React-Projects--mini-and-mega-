@@ -5,9 +5,12 @@ export class AuthService{
     client=new Client();
     account;
     constructor(){
+        //https://cloud.appwrite.io/v1
+        // 65b0e3c4a94415ac5d7f
+        // 65b0e3c4a94415ac5d7f
         this.client
-            .setEndpoint(conf.appWriteUrl)
-            .setProject(conf.appWriteProjectId);
+            .setEndpoint('https://cloud.appwrite.io/v1')
+            .setProject('65b0e3c4a94415ac5d7f');
             this.account=new Account(this.client);
     }
     

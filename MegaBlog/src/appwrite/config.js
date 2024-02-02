@@ -1,4 +1,4 @@
-import conf from "../conf/conf.js";
+import conf from "../conf/conf";
 import { Client, ID ,Databases, Storage, Query  } from "appwrite";
 
 export class Service{
@@ -7,8 +7,8 @@ export class Service{
     bucket;
     constructor(){
         this.client
-            .setEndpoint(conf.appWriteUrl)
-            .setProject(conf.appWriteProjectId)
+            .setEndpoint('https://cloud.appwrite.io/v1')
+            .setProject('65b0e3c4a94415ac5d7f');
             this.databases=new Databases(this.client)
             this.bucket=new Storage(this.client);
     }
